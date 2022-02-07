@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
+      //faz interações com as janelas
+      var janela
       function abrir() {
-        window.open('http://google.com', 'nova_janela', 'width=200',)
+        janela = window.open(
+          'http://google.com',
+          'nova_janela',
+          'width=200',
+          'height=100'
+        )
       }
       function fechar() {
-        window.close()
+        janela.close()
       }
     </script>
   </head>
