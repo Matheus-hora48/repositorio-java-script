@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var video = Array()
+
+      video[1]= Array()
+      video[1]= ['nome'] = 'batman'
+      video[1]= ['categoria'] = 'fantasia'
+
+      function getvideo(video){
+
+        //try significa tentar
+        try{
+          console.log(video[0]['nome'])
+
+        //catch oq podemos fazer com o erro
+        } catch(e) {
+          console.log('Agora podemos tratar')
+          //ele força a parada mas apresenta uma mensagem de erro bonitinha
+          throw new Error('Houve um erro!!!')
+
+        //como finalizar o erro
+        } finally{
+          console.log('Sempre passa por aqui')
+        }
+
+      }
+
+      getvideo(video)
+    </script>
+  </head>
+  <body></body>
+</html>
