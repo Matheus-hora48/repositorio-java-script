@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      //faz interações com a tela
-      var altura = window.screen.availHeight
-      var largura = window.screen.availWidth
+      //setTimeout(function() {document.write('teste')},2000)
 
-      document.writeln('Altura do navegador é: ' + altura)
-      document.writeln('Largura do navegador é: ' + largura)
+      var i = 5
+      setInterval(function () {
+        document.writeln(i) 
+        i--
+        if(i === 0){
+          //window.location.reload()
+          clearInterval()
+        }
+      }, 1000)
     </script>
   </head>
   <body></body>
