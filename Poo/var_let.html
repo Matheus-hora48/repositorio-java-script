@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+
+      //No caso do let ele preserva o escopo que é criada, essas seria sua diferença. 
+
+      //3 escopos: Global, Função e Bloco
+
+      //Global: Variavel global, pode ser vista por todo o programa
+      var serie = 'Cobra Kai'
+
+      function x() {
+        //Função: O que é escrito dentro do bloco de uma função so pode ser visto dentro da propria, so acessa diretamente na função
+        var serie = 'GOT'
+        console.log(serie)
+        if (true) {
+          console.log(serie)
+        }
+      }
+
+      x()
+      if (true) {
+        //Bloco: Quando declara a variavel em um bloco ela pode subir para o global
+        console.log(serie)
+      }
+    </script>
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      //O let so se mantem no escopo padrao dela
+      let serie = 'AAA'
+
+      {
+        //Aqui ele sobre escreve a variavel de bloco na variavel global, deve ser usado o let
+        let serie = 'BBB'
+        console.log(serie)
+      }
+      console.log(serie)
+    </script>
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
