@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      class contaBancaria {
+        //o constructor é ode vai ficar as caracteristicas
+        constructor() {
+          //operador para colocar as cacteristicas
+          this.agencia = 1075
+          this.numeroConta = 854135
+          this.saldo = 50
+          this.limite = 450
+        }
+        //os metodos/ações da entidade
+        depositar() {
+          this.saldo += valorDepositado
+        }
+
+        sacar() {
+          this.saldo -= valorSaque
+        }
+
+        consultarSaldo() {
+          return this.saldo
+        }
+      }
+
+      //assim se cria um objeto que vai usar os atributo e metodos
+      let x = new contaBancaria()
+
+      //para consultar
+      console.log(x.consultarSaldo())
+      x.depositar(450)
+      console.log(x.consultarSaldo())
+      x.sacar(100)
+      console.log(x.consultarSaldo())
+    </script>
+  </head>
+  <body></body>
+</html>
