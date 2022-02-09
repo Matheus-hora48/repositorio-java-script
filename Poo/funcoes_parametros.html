@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //Esse metodo serve para passar um valor default para a função caso nao seja declarado os valores
+      function contarUmaHistoria(a = 'Marcos', b = 'Roberto', c = 'Marina') {
+        document.write(
+          `Vai ter uma historia com o ${a} talvez com o ${b} ou com a ${c}`
+        )
+      }
+
+      //Quando passa o valor a ser declarado ele ja sobrepoem o antigo, colocando o valor undefined ele ja assume altumaticamente o valor default
+      contarUmaHistoria(undefined, 'alfredo', 'fernanda')
+    </script>
+  </head>
+  <body></body>
+</html>
