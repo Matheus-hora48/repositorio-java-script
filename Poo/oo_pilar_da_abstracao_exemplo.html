@@ -7,14 +7,25 @@
     <title>Document</title>
 
     <script>
-      let qtde_pernas = 4
-      let giratoria = true
-      let color = blue
-
-      function girar() {
-        console.log(giratoria === true ? 'girou' : 'cadeira nao gira')
+      class cadeira {
+        //caracteristicas
+        construtor(qtde_pernas, giratoria, cor) {
+          this.qtde_pernas = qtde_pernas
+          this.giratoria = giratoria
+          this.cor = cor
+        }
+        //açoes
+        girarCadeira() {
+          if (this.giratoria === true) {
+            console.log('girou')
+          } else {
+            console.log('Não girou')
+          } 
+        }
       }
-      girar()
+      //criar o objeto
+      let cadeira = new cadeira(4, false, 'rosa')
+      cadeira.girarCadeira()
     </script>
   </head>
   <body></body>
