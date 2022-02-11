@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function acao() {
+        alert('Evento disparado')
+      }
+    </script>
+  </head>
+  <body>
+    <!--
+      onclick - dispara o evento quando é clicado
+      ondblclick - disparando o evento quando é clicado duas vezes
+      onmouseup - disparado quando termina o click do mouse
+      onmouseover - ação desparada quando passa o curso do mouse
+      onmouseout - dispara quando sai o mouse do local
+    -->
+    <div
+      onmouseout="acao()"
+      style="background: #ccc; height: 150px; width: 150px"
+    ></div>
+  </body>
+</html>
