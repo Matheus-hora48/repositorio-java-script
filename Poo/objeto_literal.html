@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
+
+      //Fazendo um objeto com uma class
       class Produto {
         constructor(descricao, preco) {
           this.descricao = descricao
@@ -19,6 +21,17 @@
 
       let produto = new Produto('Notebook', 1500)
       produto.verDescicao()
+
+      //Fazendo um objeto literal
+      let produtoLiteral = {
+        descricao: 'Geladeira',
+        preco: 1800,
+        verDescicao: function () {
+          console.log(`${this.descricao} por apenas ${this.preco}`)
+        }
+      }
+
+      produtoLiteral.verDescicao()
     </script>
   </head>
   <body></body>
