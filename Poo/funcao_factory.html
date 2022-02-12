@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let bicicleta1 = {
+        cor: 'Branca',
+        marcha: 'unica',
+        aro: 12,
+        pedalar() {
+          console.log(`Metodo pedalar executado`)
+        }
+      }
+
+      console.log(bicicleta1)
+
+      //pode adicionar de forma dinamica os parametros
+      let bicicletaFactory = function (cor, marcha, aro) {
+        //jeito de usar o factory
+        return {
+          cor,
+          marcha,
+          aro,
+          pedalar() {
+            console.log(`Metodo pedalar executado`)
+          }
+        }
+      }
+
+      let bicicleta2 = bicicletaFactory('vermelha', '18', 25)
+      console.log(bicicleta2)
+    </script>
+  </head>
+  <body></body>
+</html>
