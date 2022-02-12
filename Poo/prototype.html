@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //objeto literal
+      let a1 = {
+        cor: 'Branco',
+        modelo: 'A380',
+        levantarVoo: function () {
+          console.log('levantar voo')
+        }
+      }
+
+      //função contrutora
+      let aviaoF = function () {
+        this.cor = 'azul'
+        this.modelo = 'F787'
+        this.modelo = function () {
+          console.log('levantar voo')
+        }
+      }
+
+      let a2 = new aviaoF()
+
+      //classe
+      class AviaoC {
+        constructor() {
+          this.cor = 'Azul'
+          this.modelo = 'AJ63'
+        }
+
+        levantarVoo() {
+          console.log('levantar voo')
+        }
+      }
+
+      let a3 = new AviaoC()
+
+      //Todos os objeto que criar vem da herança do object
+      console.log(a1)
+      console.log(a2)
+      console.log(a3)
+    </script>
+  </head>
+  <body></body>
+</html>
