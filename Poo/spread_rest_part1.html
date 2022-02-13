@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //Operador spread = separar coisas e tambem para juntar 
+      let titu = 'Como utilizar o operador rest/spread'
+
+      //serve para separar letra por letra
+      console.log(titu)
+      console.log(...titu)
+      console.log([...titu])
+
+      //arrays = pode ser usado pra adicionar uma array a outras
+      let list1 = ['a', 'b', 'c']
+      let list2 = ['d', 'e', 'f']
+      let list3 = [...list1, ...list2, 'g', 'h']
+
+      console.log(list3)
+
+      //objeto = vai adicionar uma lista a outa
+      let pessoa = { nome: 'Matheus', idade: 20 }
+      let clone = { endereco: 'Rua abc', ...pessoa }
+
+      console.log(clone)
+    </script>
+  </head>
+  <body></body>
+</html>

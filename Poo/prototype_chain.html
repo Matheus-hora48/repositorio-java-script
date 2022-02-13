@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //Por padrão vem nesse prototype object e pode adicionar parametros padrão para ele
+      Object.prototype.at50 = 'z'
+      //prototype faz uma herança e dessa forma a baixo tem como pegar a informações e criar a herança
+      let animal = { at1: 'a' }
+      let vertebrado = { at2: 'b' }
+      let ave = { __proto__: vertebrado, at3: 'c' }
+      console.log(ava.at2)
+    </script>
+  </head>
+  <body></body>
+</html>

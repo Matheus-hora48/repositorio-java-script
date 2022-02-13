@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //destructuring = tira valores de dntro de uma extrutura (array ou obejetos)
+
+      let frutas = ['Uva', 'Pera', 'laranja', 'maça']
+
+      //usa a [] depois do let ou const para indicar que é uma destructuring, e faz desse jeito
+      //let [a, b, , c] = frutas // podemos pular os indices
+
+      let [a, b, c, d, e = 'banana', f] = frutas // dessa forma podemos declarar um valor padão para os underfined
+
+      console.log(a, b, c, d, e)
+
+      let coisas = [
+        ['Uva', 'Pera', 'laranja', 'maça'],
+        ['José', 'Matheus']
+      ]
+
+      let [, n1, [, n2]] = coisas
+      console.log(n2)
+    </script>
+  </head>
+  <body></body>
+</html>
