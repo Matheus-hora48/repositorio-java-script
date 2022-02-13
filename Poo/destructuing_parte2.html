@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //Para desestruturar valores em objetos e trasformar variavel
+      let produto = {
+        descricao: 'Notebook',
+        preco: 1800,
+        detalhes: {
+          fabricante: 'abc',
+          modelo: 'xyz'
+        }
+      }
+
+      //no lugar das [] usa {} em objetos
+      //Colocando assim a variavel assume outro nome
+      //let { descricao: d, preco: p } = produto
+      let {
+        detalhes: { fabricante, modelo }
+      } = produto
+      console.log(fabricante, modelo)
+    </script>
+  </head>
+  <body></body>
+</html>
