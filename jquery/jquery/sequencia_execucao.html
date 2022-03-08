@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+
+    <!--<script src="jquery-3.3.1.min.js"></script>-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <script>
+      //para xecutar funções apos a pagina ser carregada
+
+      $(function(){
+        console.log($('#exemplo'))
+      })
+
+      /* outro jeito
+      function teste() {
+        console.log($('#exemplo'))
+      }
+
+      $(teste)
+      /*
+
+      /* outro modo
+      $(document).ready(function () {
+
+        function teste() {
+          console.log($('#exemplo'))
+        }
+
+        teste()
+      })
+      */
+    </script>
+
+    <div id="exemplo">teste</div>
+  </body>
+</html>
