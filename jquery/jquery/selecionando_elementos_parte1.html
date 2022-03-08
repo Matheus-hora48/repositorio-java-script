@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<h1>Selecionando elementos parte </h1>
+
+		<div>div 1</div>
+		<div>div 2</div>
+
+		<ul id="menu">
+			<li>menu 1 - item 1</li>
+			<li>menu 1 - item 2</li>
+			<li>menu 1 - item 3</li>
+		</ul>
+		<ul>
+			<li class="menu2">menu 2 - item 1</li>
+			<li class="menu2">menu 2 - item 2</li>
+			<li class="menu2">menu 2 - item 3</li>
+		</ul>
+
+		<input type="text" placeholder="campo 1">
+
+		<select>
+			 <option value="">-- Selecione uma opção --</option>
+			 <option value="">opção 1</option>
+			 <option value="">opção 2</option>
+		</select>
+
+		<br/>
+
+		<img src="./img/carro.jpg" alt="">
+	</body>
+
+	<script>
+		
+		//o $ serve pare retornar elementos do html pela tag
+		console.log ($('h1'))
+		console.log ($('div'))
+		console.log ($('ul'))
+		console.log ($('li'))
+		console.log ($('select'))
+		console.log ($('input'))
+		console.log ($('img'))
+
+		//para retornar a class de um elemento
+		console.log ($('.menu2'))
+
+		//para retornar um id de um elemento
+		console.log ($('#menu'))
+	</script>
+
+</html>
