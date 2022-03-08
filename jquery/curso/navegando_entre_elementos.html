@@ -6,7 +6,14 @@
 
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<script>
+			//para selecionar o html pai
+			console.log($('.secao1').parent())
 
+			//o closent serve para procura por elementos pais
+			$('.secao1').closest('#pagina') //no closest ele pega o primeiro elemento pai com essa tag
+
+			//o find serve para procurar o elemento filho
+			$('.secao1').find('#pagina')
 		</script>
 	</head>
 
