@@ -12,6 +12,14 @@
       $(document).ready(() => {
         //vai recuperar o valor do input
         $('#nome').val()
+
+        //Jeito de descbrir o input radio em um form
+        $('.sexo:checked') // tem que usar o checked
+
+        //para ver qual foram todos marcados
+        $.each($('.interesse:checked'), (indice, valor) =>{
+          console.log(indice, valor)
+        })
       })
     </script>
 	</head>
@@ -29,6 +37,18 @@
       <option value="3">Radio</option>
       <option value="4">Outros</option>
     </select>
-    </div>
+    <br>
+
+
+    <p>Sxo:</p>
+    <input type="radio" name="sexo" class="sexo" value="f" id="">Femenino<br>
+    <input type="radio" name="sexo" class="sexo" value="m" id="">Masculino<br>
+    <br>
+    <p>Interesses</p>
+    <input type="checkbox" name="interesse" class="interesse" value="PHP" id="">PHP
+    <input type="checkbox" name="interesse" class="interesse" value="Js" id="">Js
+    <input type="checkbox" name="interesse" class="interesse" value="Angular" id="">Angular
+    <input type="checkbox" name="interesse" class="interesse" value="NodeJS" id="">NodeJS
+
 	</body>
 </html>

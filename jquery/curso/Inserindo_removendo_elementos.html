@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(() => {
+        //inserir itens no html(para fazer isso primeiro precisamos de uma referencia no html)
+
+        //vai colocar dentro do local que escolheu
+
+        $('#lista1').append('<li>item 4</li>')//append coloca no final
+
+        $('#lista1').prepend('<li>item 0</li>')//prepend coloca no inicio
+
+
+        //Vai colocar fora do local que escolheu(elemento irmão)
+
+        $('#lista1').after('<p>Estou fora dos elementos</p>')//o after coloca fora e depois dos elementos
+
+        $('#lista1').before('<p>Estou fora dos elementos</p>')//o before coloca fora e antes dos elementos
+
+        //Para subtituir todo o conteudo de uma div usa o html
+        //$('#lista1').html('<p>Subtituir todo o conteudo</p>')
+
+        //Paremover elementos basta usar o remove()
+        //$('#lista1').remove()
+      })
+    </script>
+	</head>
+
+	<body>
+		
+    <ul id="lista1">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+
+    <div id="lista2">
+      <div>item 1</div>
+      <div>item 2</div>
+      <div>item 3</div>
+    </div>
+
+    <hr>
+	</body>
+</html>
