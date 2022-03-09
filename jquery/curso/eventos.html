@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <title>jQuery</title>
 
-    <style></style>
+    <style>
+      #divExterna {
+        background-color: #ccc;
+        width: 80px;
+        height: 80px;
+      }
+    </style>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -12,13 +18,12 @@
       crossorigin="anonymous"
     ></script>
     <script>
-
       //esse é o evento que aciona quando a pagina é carregada
       $(document).ready(() => {
         $('#onload').html('Página carregada')
 
         //dispara o evento quando o scroll é rolado
-				//o window serve para pegar toda a tela
+        //o window serve para pegar toda a tela
         $(window).scroll(() => {
           $('#scroll').html('Scroll acionado')
         })
@@ -30,17 +35,69 @@
             .css('background-color', 'red')
         })
 
-				//aqui ele vai aplicar o evento em um local especifico 
-				$('#div1').scroll(function(){
-					//o this serve para referenciar objetos
-					$(this).css('background-color', 'red')
+        //aqui ele vai aplicar o evento em um local especifico
+        $('#div1').scroll(function () {
+          //o this serve para referenciar objetos
+          $(this).css('background-color', 'red')
+        })
+
+        //outra forma de fazer
+        $('#div1').scroll(e => {
+          //o this serve para referenciar objetos
+          $(e.target).css('background-color', 'red')
+        })
+      })
+
+      //parte do mouse
+      $(document).ready(() => {
+        //o é evento é disparado quando é apertado com o mouse sobre ele
+        $('#btn1').mousedown(() => {
+          $('#div2').css('background-color', 'green')
+        })
+
+        //o evento é libado apos soltar a tecla pressionada
+        $('#btn1').mouseup(() => {
+          $('#div2').css('background-color', 'blue')
+        })
+
+        //o click funciona parecido com o mouseup
+        $('#btn1').click(() => {
+          $('#div2').css('background-color', 'blue')
+        })
+
+        //a ação é desparando quando acontece o click duas vezes
+        $('#btn2').dblclick(() => {
+          $('#div2').css('background-color', 'yellow')
+        })
+
+        //dispara elemento quando o mouse mexe na area
+        $('#div2').mousemove(e => {
+          $('#resul').html('X: ' + e.offsetX + ' /Y: ' + e.offsetY)
+        })
+
+				//mouseover / mouseout (antigos)
+				$('#divExterna').mouseover(() =>{
+					$('#resultadoDiv1').html(' Entrou')
 				})
 
-				//outra forma de fazer
-				$('#div1').scroll(e =>{
-					//o this serve para referenciar objetos
-					$(e.target).css('background-color', 'red')
+				$('#divExterna').mouseout(() =>{
+					$('#resultadoDiv1').html(' Saiu')
 				})
+
+				//mouseenter / mouseleave (novos)
+				$('#divExterna').mouseenter(() =>{
+					$('#resultadoDiv1').html(' Entrou')
+				})
+
+				$('#divExterna').mouseleave(() =>{
+					$('#resultadoDiv1').html(' Saiu')
+				})
+
+				//serve para disparar um evento quando o mouse entrar na div podendo usar tbm o mouseenter
+				
+
+				//serve para disparar um evento quando o mouse sair da div pode ser usado o mouseleave
+					
       })
     </script>
   </head>
@@ -56,7 +113,7 @@
       <span>Scroll: </span><span id="scroll">?</span><br />
       <span>Resize Window: </span><span id="resize">?</span>
       <div
-				id="div1"
+        id="div1"
         style="
           height: 100px;
           width: 100px;
@@ -69,9 +126,10 @@
       <hr />
 
       <h3>Mouse</h3>
-      <button type="button">Clique aqui</button>
-      <button type="button">Clique aqui 2x</button>
+      <button id="btn1" type="button">Clique aqui</button>
+      <button id="btn2" type="button">Clique aqui 2x</button>
       <div
+        id="div2"
         style="
           background-color: red;
           width: 80px;
@@ -80,7 +138,14 @@
           margin-bottom: 10px;
         "
       ></div>
-      <span>Resultado do evento sobre a div</span>
+      <span id="resul">Resultado do evento sobre a div</span>
+
+      <div id="divExterna">
+				<div id="interna">
+					
+				</div>
+			</div>
+      <span>Div Externa:</span><span id="resultadoDiv1"></span>
       <hr />
 
       <h3>Teclado</h3>
