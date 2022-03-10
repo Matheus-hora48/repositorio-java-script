@@ -9,6 +9,13 @@
         background-color: #ccc;
         width: 80px;
         height: 80px;
+        padding: 70px;
+      }
+
+      #divInterna {
+        width: 80px;
+        height: 80px;
+        background-color: blue;
       }
     </style>
 
@@ -18,86 +25,130 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      //esse é o evento que aciona quando a pagina é carregada
       $(document).ready(() => {
         $('#onload').html('Página carregada')
 
-        //dispara o evento quando o scroll é rolado
-        //o window serve para pegar toda a tela
         $(window).scroll(() => {
           $('#scroll').html('Scroll acionado')
         })
 
-        //dispara o evento quando a pagina é redimensionada
         $(window).resize(() => {
-          $('#resize')
-            .html('A pagina foi redimensionada')
-            .css('background-color', 'red')
+          $('#xyz').html('Página redimensionada').css('background-color', 'red')
         })
 
-        //aqui ele vai aplicar o evento em um local especifico
-        $('#div1').scroll(function () {
-          //o this serve para referenciar objetos
-          $(this).css('background-color', 'red')
-        })
-
-        //outra forma de fazer
+        //function / arrow function
         $('#div1').scroll(e => {
-          //o this serve para referenciar objetos
-          $(e.target).css('background-color', 'red')
+          $(e.target).css('background-color', 'blue')
         })
-      })
 
-      //parte do mouse
-      $(document).ready(() => {
-        //o é evento é disparado quando é apertado com o mouse sobre ele
         $('#btn1').mousedown(() => {
           $('#div2').css('background-color', 'green')
         })
 
-        //o evento é libado apos soltar a tecla pressionada
-        $('#btn1').mouseup(() => {
-          $('#div2').css('background-color', 'blue')
-        })
-
-        //o click funciona parecido com o mouseup
         $('#btn1').click(() => {
           $('#div2').css('background-color', 'blue')
         })
 
-        //a ação é desparando quando acontece o click duas vezes
         $('#btn2').dblclick(() => {
           $('#div2').css('background-color', 'yellow')
         })
 
-        //dispara elemento quando o mouse mexe na area
         $('#div2').mousemove(e => {
-          $('#resul').html('X: ' + e.offsetX + ' /Y: ' + e.offsetY)
+          $('#resultadoDiv').html('X: ' + e.offsetX + ' / Y: ' + e.offsetY)
         })
 
-				//mouseover / mouseout (antigos)
-				$('#divExterna').mouseover(() =>{
-					$('#resultadoDiv1').html(' Entrou')
+        /* mouseouver / mouseout (antigos) */
+        /*
+				$('#divExterna').mouseover(() => {
+					$('#resultadoDiv1').html('entrou')
+					console.log('Div Externa (entrou)')
 				})
 
-				$('#divExterna').mouseout(() =>{
-					$('#resultadoDiv1').html(' Saiu')
+				$('#divExterna').mouseout(() => {
+					$('#resultadoDiv1').html('saiu')
+					console.log('Div Externa (saiu)')
 				})
 
-				//mouseenter / mouseleave (novos)
-				$('#divExterna').mouseenter(() =>{
-					$('#resultadoDiv1').html(' Entrou')
+				$('#divInterna').mouseover(() => {
+					$('#resultadoDiv2').html('entrou')
+					console.log('Div Interna (entrou)')
 				})
 
-				$('#divExterna').mouseleave(() =>{
-					$('#resultadoDiv1').html(' Saiu')
+				$('#divInterna').mouseout(() => {
+					$('#resultadoDiv2').html('saiu')
+					console.log('Div Iterna (saiu)')
 				})
+				*/
 
-				//serve para disparar um evento quando o mouse entrar na div podendo usar tbm o mouseenter
-				
+        /* mouseenter / mouseleave (novos) */
+        $('#divExterna').mouseenter(() => {
+          $('#resultadoDiv1').html('entrou')
+          console.log('Div Externa (entrou)')
+        })
 
-				//serve para disparar um evento quando o mouse sair da div pode ser usado o mouseleave
-					
+        $('#divExterna').mouseleave(() => {
+          $('#resultadoDiv1').html('saiu')
+          console.log('Div Externa (saiu)')
+        })
+
+        $('#divInterna').mouseenter(() => {
+          $('#resultadoDiv2').html('entrou')
+          console.log('Div Interna (entrou)')
+        })
+
+        $('#divInterna').mouseleave(() => {
+          $('#resultadoDiv2').html('saiu')
+          console.log('Div Interna (saiu)')
+        })
+
+        //Teclado
+
+        //O evento ativa quando a tecla é pressionada
+        $('#teclado').keydown(() => {
+          $('#resultadoTecla').html('Tecla pressionada')
+        })
+
+        //O evento ativa quando a tecla é soltada
+        $('#teclado').keyup(() => {
+          $('#resultadoTecla').html('Tecla pressionada')
+        })
+
+        //podemos capturar o evento
+        $('#teclado').keyup(e => {
+          $('#resultadoTecla').html('Tecla pressionada')
+
+          if (e.keyCode == 13) {
+            let txt = $(e.target).val()
+            $('#resultadoTecla').html(txt)
+            $(e.target).val('')
+          }
+        })
+
+        //Formulario
+
+        //o focus vai acionar o evento logo quando a pessoa clickar no formulario
+        $('#nome').focus(() => {
+          console.log('Esse elemento recebeu o foco')
+        })
+
+        $('#email').focus(() => {
+          console.log('Esse elemento recebeu o foco')
+        })
+
+        //O bluer serve para disparar o evento quando perde o foco
+        $('#nome').blur(() => {
+          console.log('Esse elemento pedeu o foco')
+        })
+
+        $('#email').blur(() => {
+          console.log('Esse elemento perdeu o foco')
+        })
+
+        //usado em um do tipo radio sempre que for modificada alguma coisa eles dispara o evento
+        $('#muda').change(e => {
+          console.log('Opão modificada')
+          console.log($(e.target).val())
+        })
       })
     </script>
   </head>
@@ -111,7 +162,7 @@
       <h3>Browser</h3>
       <span>Onload: </span><span id="onload">?</span><br />
       <span>Scroll: </span><span id="scroll">?</span><br />
-      <span>Resize Window: </span><span id="resize">?</span>
+      <span>Resize window: </span><span id="xyz">?</span>
       <div
         id="div1"
         style="
@@ -121,7 +172,7 @@
           overflow-y: scroll;
         "
       >
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </div>
       <hr />
 
@@ -138,38 +189,39 @@
           margin-bottom: 10px;
         "
       ></div>
-      <span id="resul">Resultado do evento sobre a div</span>
+      <span>Resultado do evento sobre a div</span
+      ><span id="resultadoDiv"></span>
 
       <div id="divExterna">
-				<div id="interna">
-					
-				</div>
-			</div>
-      <span>Div Externa:</span><span id="resultadoDiv1"></span>
+        <div id="divInterna"></div>
+      </div>
+      <span>Div Externa: </span><span id="resultadoDiv1"></span>
+      <br />
+      <span>Div Interna: </span><span id="resultadoDiv2"></span>
       <hr />
 
       <h3>Teclado</h3>
       <span>Nome:</span>
-      <input type="text" />
-      <span>Resultado do evento sobre o input</span>
+      <input type="text" id="teclado" />
+      <span id="resultadoTecla">Resultado do evento sobre o input</span>
       <hr />
 
       <h3>Formulário</h3>
       <form>
         <span>Nome:</span>
-        <input type="text" />
+        <input type="text" id="nome" />
 
         <span>E-mail:</span>
-        <input type="text" />
+        <input type="text" id="email" />
 
         <span>Motivo do contato:</span>
-        <select>
+        <select id="muda">
           <option value="">-- Selecione --</option>
           <option value="duvida">Dúvida</option>
           <option value="sugestao">Sugestão</option>
         </select>
 
-        <button type="button">Enviar</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   </body>
