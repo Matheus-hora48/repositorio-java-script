@@ -127,27 +127,25 @@
         //Formulario
 
         //o focus vai acionar o evento logo quando a pessoa clickar no formulario
-        $('#nome').focus(() => {
-          console.log('Esse elemento recebeu o foco')
-        })
-
-        $('#email').focus(() => {
+        $('#nome, #email').focus(() => {
           console.log('Esse elemento recebeu o foco')
         })
 
         //O bluer serve para disparar o evento quando perde o foco
-        $('#nome').blur(() => {
+        $('#nome, #email').blur(() => {
           console.log('Esse elemento pedeu o foco')
-        })
-
-        $('#email').blur(() => {
-          console.log('Esse elemento perdeu o foco')
         })
 
         //usado em um do tipo radio sempre que for modificada alguma coisa eles dispara o evento
         $('#muda').change(e => {
           console.log('Opão modificada')
           console.log($(e.target).val())
+        })
+        
+        //para o submit (o e serve para capturar um evento)
+        $('form').submit((e) =>{
+          e.preventDefault()
+          console.log('Formulario enviado')
         })
       })
     </script>
@@ -207,7 +205,7 @@
       <hr />
 
       <h3>Formulário</h3>
-      <form>
+      <form id="form">
         <span>Nome:</span>
         <input type="text" id="nome" />
 
