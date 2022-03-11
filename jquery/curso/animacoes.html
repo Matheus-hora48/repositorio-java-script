@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			.div{
+        width: 80px;
+        height: 80px;
+        border: 1px #000;
+        background-color: #aaa;
+      }
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+      //animate(<propriedade visuais>, <opçoes de transição(velcidade ou açoes)>)
+			$(document).ready(() => {
+        $('button').on('click', () =>{
+          $('div').animate({
+            'width': '160px',
+            'height': '160px',
+            'margin-left': '200px',
+            'margin-top': '200px',
+            'border-radius': '25px'
+          },
+          {
+            duration: 1500,
+            start:() => {console.log('Animação iniciada')}, //faz um evento quando começa essa nimação
+            complete:() => {console.log('Finalizada')} //faz um evento quando termina a animação
+          })  
+        })
+      })
+		</script>
+	</head>
+
+	<body>
+		
+		<button type="button">Iniciar animação</button>
+    <br><br><br>
+    <div class="div"></div>
+			
+	</body>
+
+</html>
