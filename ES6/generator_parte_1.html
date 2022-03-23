@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6</title>
+</head>
+<body>
+  <script>
+
+    //Com a função generator podemos executar a função em diferente estagios utilizando o yield ele marma ate onde a função vai ser executada e o next serve pra executar ela
+
+      function* testeGenerator(){
+        console.log('teste 1')
+        yield console.log('teste 2')
+        console.log('teste 3')
+
+        return 'teste 4'
+      }
+
+      let meuGenerator = testeGenerator()
+
+      meuGenerator.next()
+      console.log
+      meuGenerator.next()
+
+  </script>
+</body>
+</html>
