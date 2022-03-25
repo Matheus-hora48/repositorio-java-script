@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES8</title>
+</head>
+<body>
+  <script>
+
+    let objeto = {
+      nome: 'Matheus Hora',
+      profissional: {
+        site: 'matheus.com.br',
+        profissao: 'progrmador'
+      },
+      hobbies: [
+        {id: 1, hobby: 'Dormir'},
+        {id: 2, hobby: 'Dormir'}
+      ],
+    }
+
+    //descritores detalhados
+    console.log(Object.getOwnPropertyDescriptors(objeto))
+
+    //Descritor Writable: qunado falso ele indica que a propriedade nao pode ser modficiada
+    
+    /*
+    Object.defineProperty(objeto, 'nome',{
+      value: 'Matheus Hora',
+      writable: false
+    })
+    */
+
+    console.log(Object.getOwnPropertyDescriptors(objeto))
+
+
+    //Descritor Enumerable: quando definido como false a propriedade nao aprece em laços de repetição
+
+    //Descritor Configurable: quando definido como false a propriedadenao pode ser deletada
+    Object.defineProperty(objeto, 'pais',{
+      configurable: false
+    })
+    console.log(Object.getOwnPropertyDescriptors(objeto))
+
+  </script>
+</body>
+</html>
