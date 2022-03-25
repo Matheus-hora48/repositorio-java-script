@@ -9,26 +9,14 @@
   <body>
     <script>
       
-      let nomes = [
-        'João, José, Maria',
-        'Sandra, paulo',
-        'Gustavo, Matheus, Marcos'
-    ]
+      let texto = '             teste'
 
-      console.log(nomes)
-
-      //Dessa forma cria 3 array separada
-      let nomesMap = nomes.map(item =>{
-        return item.split(',')
-      })
-
-
-      //ele cria um array nivelado
-      let nomesFlatMap = nomes.flatMap(item =>{
-        return item.split(',')
-      })
-
-      console.log(nomenomesFlatMapsMap)
+      //serve para tirar espaços dos 2 lados
+      console.log('.' + texto.trim)
+      //serve para tirar espaços que tao sobrando em uma string a esqueda
+      console.log('.' + texto.trimStar())
+      //serve para tirar espaços que tao sobrando em uma string a direita
+      console.log('.' + texto.trimEbd())
     </script>
   </body>
 </html>
