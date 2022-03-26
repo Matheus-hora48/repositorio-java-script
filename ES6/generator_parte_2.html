@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6</title>
+  </head>
+  <body>
+    <script>
+      function* conversar() {
+        let opcao = yield 'E ai, tudo bem?'
+
+        if (opcao == 'sim') {
+          yield 'Otimo, fico feliz!'
+
+          opcao = yield 'Como posso te ajudar? quer uma piada para começar?'
+
+          if (opcao == 'sim') {
+            fetch('dados/piadas.json')
+              .then(resposta => resposta.json())
+              .then(piadas => {
+                let piada = piadas[Math.floor(Math.random() * 10)]
+                console.log(piada.piada)
+                setTimeout(() => {
+                  console.log(piada.resposta)
+                  console.log('KKKKKKKKKKK muito boa ne')
+                }, 4000)
+              })
+            return 'Digite 1 para compras, 2 para vendas e 3 para falar com um atendente'
+          } else {
+            yield 'Digite 1 para compras, 2 para vendas e 3 para falar com um atendente'
+          }
+        } else {
+          yield 'Tenha paciencia'
+
+          yield 'Digite 1 para compras, 2 para vendas e 3 para falar com um atendente'
+        }
+        yield 'Conversa finalizada'
+      }
+
+      let conversa = conversar() //objeto iterator
+
+      function acao() {
+        let resposta = document.getElementById('resposta').value
+
+        let interacao = conversa.next(resposta)
+        console.log(interacao)
+      }
+    </script>
+
+    <div>
+      <button type="button" onclick="acao()">Avançar</button>
+      Resposta: <input type="text" id="resposta" />
+    </div>
+  </body>
+</html>

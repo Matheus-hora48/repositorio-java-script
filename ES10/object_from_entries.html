@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES10</title>
+  </head>
+  <body>
+    <script>
+
+      //Transformando um arr em objeto
+      let dado = [
+        ['nome', 'Matheus Hora']
+        ['profissional',[
+          ['site', 'matheus.com.br'],
+          ['profissao','progrmador']
+        ]],
+        ['hobbies',['andar', 'caminhar']],
+        ['pais', 'brasil']
+      ]
+
+      console.log(Object.fromEntries(dado))
+    </script>
+  </body>
+</html>

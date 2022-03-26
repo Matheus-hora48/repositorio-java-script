@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    let promessa = new Promise((resolve, reject) =>{
+      
+      //recuperar uma relação de usuários
+      setTimeout(() => {
+
+        //requisições realizada
+        let reposta_requisicao = {}
+
+        //erro na requesição
+        if(true){
+
+          reposta_requisicao = {
+            codigo: 1050,
+            erro: 'falha na requisição'
+          }
+
+          reject(reposta_requisicao)
+        }
+
+        reposta_requisicao = {
+          0:{id: 1, nome: 'matheus'},
+          1:{id: 2, nome: 'jose'},
+          2:{id: 3, nome: 'maria'},
+        }
+
+        resolve(reposta_requisicao)
+
+        }, 4000)
+
+    //o then serve para realizar uma operação apos a resposta da requisicao dando certo
+    }).then(dados => {
+      console.log('Operação sequencial: ', dados)
+    }).catch(erro =>{
+      console.log('Operação sequencial: ', erro)
+    })
+
+  </script>
+</body>
+</html>
