@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES11</title>
+  </head>
+  <body>
+    <button id="btnsaudacao">Saudação</button>
+    <hr />
+    <input type="text" id="cep" placeholder="CEP" />
+    <button id="btnCEP">Consultar CEP</button>
+
+    <script type="module">
+      //O carregamnto dinamico
+      //import { saudacao, getEnderecoByCEP } from './import/lib.mjs'
+
+      document.querySelector('#btnsaudacao').addEventListener('click', async () => {
+        const modulo = await import('./import/lib.mjs').then(module => console.log(module.saudacao()))
+      
+      })
+
+      document.querySelector('#btnCEP').addEventListener('click', async () => {
+
+        let cep = document.querySelector('#cep').value
+
+        if (cep.length == 8) {
+
+          let x = await import('./import/lib2.mjs')
+  
+          x.getEnderecoByCEP(cep)
+            .then(dados => console.log(dados))
+        }
+      })
+    </script>
+  </body>
+</html>
