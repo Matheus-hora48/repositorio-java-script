@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES12</title>
+  </head>
+  <body>
+    <script>
+
+      //Apenas o 1 processo 
+
+      const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => { resolve('p1 resolvida') }, 3000)
+      })
+
+      const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => { resolve('p2 resolvida') }, 2000)
+      })
+
+      const p3 = new Promise((resolve, reject) => {
+        setTimeout(() => { resolve('p3 resolvida') }, 4000)
+      })
+
+      let promise = [p1, p2, p3]
+
+      Promise.any(promise) //Promise
+        .then((resilvida) => {
+          console.log(resilvida)
+        })
+    </script>
+  </body>
+</html>
